@@ -1,0 +1,7 @@
+project(Test)
+cmake_minimum_required(VERSION 3.0)
+add_subdirectory(mathLib)
+include_directories(./mathLib ./src)
+aux_source_directory(. DIR_SRCS)
+add_executable(main ${DIR_SRCS} ./src/output.cpp)
+target_link_libraries(main mathLib)
